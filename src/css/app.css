@@ -3,7 +3,7 @@
 @import "form.css";
 @import "bootstrap_over.css";
 @import "interactivity.css";
-@import "visio";
+@import "visio.css";
 
 html, body, #app { height: 100%; }
 
