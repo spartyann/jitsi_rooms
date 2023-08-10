@@ -1,0 +1,17 @@
+@import "bootstrap.css";
+@import "tools.css";
+@import "form.css";
+@import "bootstrap_over.css";
+@import "card.css";
+@import "interactivity.css";
+
+
+.material-icons{
+	vertical-align: middle;
+	font-size: 1em;
+}
+
+.main-container {
+	max-width: 900px;
+}
+

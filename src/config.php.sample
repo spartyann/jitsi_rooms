@@ -1,0 +1,31 @@
+<?php
+
+define('DEBUG', false);
+define('LOG_ERROR_IN_DB', true);
+define('LOG_INFO_IN_DB', true);
+
+define('DB_HOST', 'localhost');
+define('DB_USER', 'jitsi_rooms');
+define('DB_PASSWORD', 'jitsi_rooms');
+define('DB_DATABASE', 'jitsi_rooms');
+
+define('JITSI_PREFIX', '<set a unique prefix>');
+
+define('PAGE_TITLE', 'Visio');
+
+define('BODY_AFTER', '');
+define('BODY_BEFORE', '');
+
+define('BODY_AFTER_HOME', '');
+define('BODY_BEFORE_HOME', '');
+
+define('LOCALE', 'fr');
+
+define('LANG_MESSAGES_OVERRIDE', [
+        'fr' => [
+            //'title' => 'Mon titre custom'
+        ]
+    ]
+);
+
+define('CUSTOM_CSS', '');

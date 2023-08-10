@@ -1,0 +1,11 @@
+
+.form-control
+{
+	-webkit-appearance: auto;
+	-moz-appearance: auto;
+	appearance: auto;
+}
+
+.btn {
+	vertical-align: middle;
+}

@@ -1,0 +1,37 @@
+
+/*
+*************************************************************
+**********************     TOOLS     ************************
+*************************************************************
+*/
+
+/* ********* Positionning ********* */
+.tbl, .tbl-100{display:table !important}
+
+.tbl-100{width:100%}
+
+.tr{display:table-row}
+
+.td,.td-100{vertical-align:top;display:table-cell}
+
+.td-100{width:100%}
+
+.vat{vertical-align:top}
+.vam{vertical-align:middle}
+.vab{vertical-align:bottom}
+
+
+.fz-70 { font-size: 70%;}
+.fz-80 { font-size: 80%;}
+.fz-90 { font-size: 90%;}
+.fz-100 { font-size: 100%;}
+.fz-110 { font-size: 110%;}
+.fz-120 { font-size: 120%;}
+.fz-130 { font-size: 130%;}
+.fz-140 { font-size: 140%;}
+.fz-150 { font-size: 150%;}
+
+.vat { vertical-align: top;}
+.wfc { width: fit-content; }
+.wsnw { white-space: nowrap; }
+
