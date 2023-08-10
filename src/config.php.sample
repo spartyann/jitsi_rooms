@@ -4,12 +4,15 @@ define('DEBUG', false);
 define('LOG_ERROR_IN_DB', true);
 define('LOG_INFO_IN_DB', true);
 
+define('AUTO_DELETE_CONF_DAYS', 100);
+define('JITSI_DOMAIN', 'kmeet.infomaniak.com');
+define('JITSI_PREFIX', '<set a unique prefix>');
+
 define('DB_HOST', 'localhost');
 define('DB_USER', 'jitsi_rooms');
 define('DB_PASSWORD', 'jitsi_rooms');
 define('DB_DATABASE', 'jitsi_rooms');
 
-define('JITSI_PREFIX', '<set a unique prefix>');
 
 define('PAGE_TITLE', 'Visio');
 define('LOGO_URL', '');

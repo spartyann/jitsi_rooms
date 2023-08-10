@@ -6,13 +6,18 @@ class DB {
 
 	public static function save(array $reqProducts = null, array $reqPaypalResult = null)
 	{
-
 		self::sql('INSERT INTO pp_purchases(products, paypal_result) VALUES (?, ?)', [
 			json_encode($products),
 			json_encode($reqPaypalResult)
 		]);
 		
 	}
+
+    public static function clean()
+	{
+        self::sql('DELETE FROM `jr_confs` WHERE last_request < DATE_SUB(NOW(), INTERVAL ? DAY);', [ AUTO_DELETE_CONF_DAYS ]);
+        self::sql('DELETE FROM `jr_attendees` WHERE last_request < DATE_SUB(NOW(), INTERVAL 10 SECOND);');
+    }
 	
 
 	public static function quote(string $string) { return '"' . mysqli_real_escape_string(self::$CONNECTION, $string) . '"'; }
@@ -54,7 +59,7 @@ class DB {
 		{
             $error = mysqli_error(self::$CONNECTION);
 			if ($isLog == false) self::logError("SQL error on request: " . $sql);
-            
+
             error($error);
 		}
 

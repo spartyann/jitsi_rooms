@@ -1,0 +1,35 @@
+
+
+#visio_header{
+   /* border-bottom: solid 1px #dfdfdf;*/
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+}
+
+#visio_header>a{
+    padding: 4px 10px;
+    line-height: 30px;
+    
+}
+
+#visio_header>.separator{
+    margin: 4px 15px;
+    border-left: solid 1px #959595;
+    height: 30px;
+   
+}
+#visio_header>a:hover{
+    background-color: #f0f0f0;
+}
+
+
+.logo-visio{
+    margin: 4px;
+	height: 30px;
+	max-height: 30px;
+	margin-right: 10px;
+}
+
+
+

@@ -52,7 +52,7 @@ class DB_SCHEMAS {
 
 			DB::sql("CREATE TABLE jr_log (
 				id int(11) NOT NULL AUTO_INCREMENT,
-				date datetime NOT NULL DEFAULT current_timestamp(),
+				date datetime NOT NULL DEFAULT now(),
 				type varchar(30) NOT NULL,
 				msg text NOT NULL,
 				data mediumtext NOT NULL,
@@ -66,17 +66,19 @@ class DB_SCHEMAS {
 		{
 			DB::sql("CREATE TABLE jr_confs (
 				code varchar(150) NOT NULL,
-				date datetime NOT NULL DEFAULT current_timestamp(),
+				created datetime NOT NULL DEFAULT now(),
+				last_request datetime NOT NULL DEFAULT now(),
 				admin_password varchar(100) NOT NULL,
-
-				paypal_result mediumtext NOT NULL,
-				PRIMARY KEY (code)
+				params text NOT NULL,
+				PRIMARY KEY (code),
+				INDEX idx_conf_cretaed(created),
+				INDEX idx_conf_lr(last_request)
 			) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;");
 
 			DB::sql("CREATE TABLE jr_attendees (
 				id int(11) NOT NULL AUTO_INCREMENT,
 				conf_code varchar(150) NOT NULL,
-				last_request datetime NOT NULL DEFAULT current_timestamp(),
+				last_request datetime NOT NULL DEFAULT now(),
 				name varchar(150) NOT NULL,
 
 				PRIMARY KEY (id),

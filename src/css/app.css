@@ -2,8 +2,8 @@
 @import "tools.css";
 @import "form.css";
 @import "bootstrap_over.css";
-@import "card.css";
 @import "interactivity.css";
+@import "visio";
 
 html, body, #app { height: 100%; }
 
@@ -13,7 +13,7 @@ html, body, #app { height: 100%; }
 }
 
 .main-container {
-	max-width: 700px;
+	max-width: 800px;
 	padding: 50px 50px;
 	height: 100%;
 

@@ -11,6 +11,8 @@
 		$body_after = $home ? BODY_AFTER_HOME : BODY_AFTER;
 		$custom_style = CUSTOM_CSS;
 		$jitsi_prefix = JITSI_PREFIX;
+		$jitsi_domain = JITSI_DOMAIN;
+		
 		$logo_url = LOGO_URL;
 		
 		$locale = LOCALE;
@@ -55,6 +57,7 @@
 			var global_locale="{$locale}";
 			var global_lang_messages={$lang_messages};
 			var global_jitsi_prefix="{$jitsi_prefix}";
+			var global_jitsi_domain="{$jitsi_domain}";
 			var global_logo_url="{$logo_url}";
 
 
