@@ -95,9 +95,14 @@ export default {
 				action: 'updateConf',
 				conf_code: this.conf_code,
 				conf_admin_password: this.conf_admin_password,
+				new_conf_admin_password: this.new_conf_admin_password,
 				rooms: JSON.stringify(this.newRoomsArray)
 			}).then((response) => {
 				alert(self.$t('conf_saved'));
+
+				this.conf_admin_password = this.new_conf_admin_password;
+				this.setLocalStorageItem('conf_admin_password', this.conf_admin_password),
+
 				self.refresh();
 			})
 		},

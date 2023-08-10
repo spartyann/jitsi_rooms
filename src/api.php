@@ -15,6 +15,8 @@ function processApi()
     $action = $data['action'] ?? '';
     $confCode = $data['conf_code'] ?? '';
     $confAdminPassword = $data['conf_admin_password'] ?? '';
+    $newConfAdminPassword = $data['new_conf_admin_password'] ?? '';
+    
 
     if ($action == 'getOrCreate')
     {
@@ -48,7 +50,7 @@ function processApi()
         // Check ACL
         if ($conf['admin_password'] != $confAdminPassword) return apiError(Lang::_('invalid_password'), 403);
     
-        $conf = Data::createOrUpdateConf($confCode, $confAdminPassword, [
+        $conf = Data::createOrUpdateConf($confCode, $newConfAdminPassword, [
             'rooms' => $rooms
         ]);
     
