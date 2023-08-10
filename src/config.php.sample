@@ -12,6 +12,8 @@ define('DB_DATABASE', 'jitsi_rooms');
 define('JITSI_PREFIX', '<set a unique prefix>');
 
 define('PAGE_TITLE', 'Visio');
+define('LOGO_URL', '');
+define('FAVICON_URL', '');
 
 define('BODY_AFTER', '');
 define('BODY_BEFORE', '');

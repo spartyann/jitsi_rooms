@@ -1,13 +1,17 @@
 <?php
 	require_once('lib/app.php');
 
+		$home = isset($_GET['code']);
+		
 		$debug = DEBUG;
 		$debug_string = DEBUG ? 'true': 'false';
 
 		$title= PAGE_TITLE;
-		$body_before = BODY_BEFORE;
-		$body_after = BODY_AFTER;
+		$body_before = $home ? BODY_BEFORE_HOME : BODY_BEFORE;
+		$body_after = $home ? BODY_AFTER_HOME : BODY_AFTER;
 		$custom_style = CUSTOM_CSS;
+		$jitsi_prefix = JITSI_PREFIX;
+		$logo_url = LOGO_URL;
 		
 		$locale = LOCALE;
 		$lang_messages = json_encode(Lang::MESSAGES());
@@ -15,11 +19,15 @@
 		$vueUrl = DEBUG ? 'https://unpkg.com/vue@3.2.47/dist/vue.global.js' : 'https://unpkg.com/vue@3.2.47/dist/vue.global.prod.js';
 		$vueI18nUrl = DEBUG ? 'https://unpkg.com/vue-i18n@9.1.0/dist/vue-i18n.global.js' : 'https://unpkg.com/vue-i18n@9.1.0/dist/vue-i18n.global.prod.js';
 
+		$faviconCode = FAVICON_URL == '' ? '' : '<link href="' . FAVICON_URL . '" rel="icon">';
+
 		echo <<<HTML
 <!doctype html>
 <html lang="fr-fr" dir="ltr">
 	<head>
 		<title>$title</title>
+		$faviconCode
+
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<link href="css/app.css" rel="stylesheet" />
@@ -35,6 +43,8 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+		<script src='https://meet.jit.si/external_api.js'></script>
+		
 		<script src="$vueUrl"></script>
 		<script src="$vueI18nUrl"></script>
 		
@@ -44,15 +54,23 @@
 			var global_debug={$debug_string};
 			var global_locale="{$locale}";
 			var global_lang_messages={$lang_messages};
+			var global_jitsi_prefix="{$jitsi_prefix}";
+			var global_logo_url="{$logo_url}";
+
 
 		</script>
 
 		<script src="js/app.js"></script>
 	</head>
 	<body>
-		$body_before
+		<div id="body_before">
+			$body_before
+		</div>
 		<div id="app"></div>
-		$body_after
+
+		<div id="body_after">
+			$body_after
+		</div>
 	</body>
 </html>
 HTML;
