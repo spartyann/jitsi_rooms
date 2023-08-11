@@ -1,14 +1,14 @@
 <?php
 	require_once('lib/app.php');
 
-		$home = isset($_GET['code']);
+		$home = isset($_GET['code']) == false;
 		
 		$debug = DEBUG;
 		$debug_string = DEBUG ? 'true': 'false';
 
-		$title= PAGE_TITLE;
-		$body_before = $home ? BODY_BEFORE_HOME : BODY_BEFORE;
-		$body_after = $home ? BODY_AFTER_HOME : BODY_AFTER;
+		$page_title = Lang::_('page_title');
+		$body_before = $home ? Lang::_('body_before_home') : Lang::_('body_before');
+		$body_after = $home ? Lang::_('body_after_home') :Lang::_('body_after');
 		$custom_style = CUSTOM_CSS;
 		$jitsi_prefix = JITSI_PREFIX;
 		$jitsi_domain = JITSI_DOMAIN;
@@ -23,16 +23,18 @@
 
 		$faviconCode = FAVICON_URL == '' ? '' : '<link href="' . FAVICON_URL . '" rel="icon">';
 
+		$versionSfx = '?v=1';
+
 		echo <<<HTML
 <!doctype html>
 <html lang="fr-fr" dir="ltr">
 	<head>
-		<title>$title</title>
+		<title>$page_title</title>
 		$faviconCode
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<link href="css/app.css" rel="stylesheet" />
+		<link href="css/app.css{$versionSfx}" rel="stylesheet" />
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js" integrity="sha512-LUKzDoJKOLqnxGWWIBM4lzRBlxcva2ZTztO8bTcWPmDSpkErWx0bSP4pdsjNH8kiHAUPaT06UXcb+vOEZH+HpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -51,7 +53,7 @@
 		<script src="$vueI18nUrl"></script>
 		
 		<style>{$custom_style}</style>
-
+		
 		<script>
 			var global_debug={$debug_string};
 			var global_locale="{$locale}";
@@ -63,7 +65,7 @@
 
 		</script>
 
-		<script src="js/app.js"></script>
+		<script src="js/app.js{$versionSfx}"></script>
 	</head>
 	<body>
 		<div id="body_before">

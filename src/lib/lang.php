@@ -7,7 +7,15 @@ class Lang {
 
 		$messages = [
 			'fr' => [
+				'body_after' => '',
+				'body_before' => '',
+
+				'body_after_home' => '',
+				'body_before_home' => '',
+
+				'page_title' => 'Visioconference',
 				'title' => 'Visioconférence',
+				'home_description' => '',
 				'edit_title' => 'Edition de la visio',
 				'btn_connect' => 'Se connecter',
 				'btn_admin' => 'Administrer la conférence',
@@ -32,6 +40,7 @@ class Lang {
 				'conf_saved' => "La conférence a bien été enregistrée",
 
 				'main_room' => "Salle principale",
+
 			]
 		];
 
@@ -44,7 +53,7 @@ class Lang {
 	}
 
 	public static function _($code){
-		return self::MESSAGES()[LOCALE][$code];
+		return self::MESSAGES()[LOCALE][$code] ?? '';
 	}
 	
 }

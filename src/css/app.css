@@ -5,7 +5,14 @@
 @import "interactivity.css";
 @import "visio.css";
 
-html, body, #app { height: 100%; }
+
+html { height: 100vh; }
+html, body, #app {
+	display: flex;
+	flex-direction: column;
+	flex:1
+}
+
 
 .material-icons{
 	vertical-align: middle;

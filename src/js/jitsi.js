@@ -40,7 +40,7 @@ export default {
 		this.height = "calc(100vh - " + customHeight + "px)";
 
 		const options = {
-			roomName: (global_jitsi_prefix == '' ? '' : global_jitsi_prefix + '-') + this.code + (this.room == '' ? '' : "-" + this.room),
+			roomName: global_jitsi_prefix + this.code + (this.room == '' ? '' : "-" + this.room),
 			width: "100%",
 			height: "100%",
 			parentNode: this.$refs.div_jitsi,

@@ -14,6 +14,8 @@ const template = /*html*/`
 			</div>
 
 			<h1>{{ $t('title') }}</h1>
+
+			<div v-if="$t('home_description') != ''" class="my-4" v-html="$t('home_description')"></div>
 			
 			<form class="row g-3">
 				
